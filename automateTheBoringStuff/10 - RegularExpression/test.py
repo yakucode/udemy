@@ -25,3 +25,13 @@ dotStar = re.compile(r'.*', re.DOTALL)
 
 vowelReg = re.compile(r'[aeiou]', re.I)
 print(vowelReg.findall("Al eE aAd Oo uuIIoi"))
+
+# create a function that takes a string and prints "good password" if it contains at least 8 characters, 1 uppercase, 1 lowercase, and 1 digit and "bad password" otherwise
+
+
+def passwordCheck(password):
+    passwordReg = re.compile(r'^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$')
+    if passwordReg.search(password):
+        print("good password")
+    else:
+        print("bad password")
